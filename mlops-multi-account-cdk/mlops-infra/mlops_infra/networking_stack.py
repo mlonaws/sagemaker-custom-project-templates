@@ -32,7 +32,7 @@ class NetworkingStack(Stack):
         self.primary_vpc = ec2.Vpc(
             self,
             "PrimaryVPC",
-            cidr="10.0.0.0/16",
+            ip_addresses=ec2.IpAddresses.cidr("10.0.0.0/16"),
             max_azs=3,
             subnet_configuration=[
                 ec2.SubnetConfiguration(
